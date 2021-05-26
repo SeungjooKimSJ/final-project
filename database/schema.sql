@@ -16,6 +16,7 @@ create table "users" (
 create table "transactions" (
   "transactionId" serial,
   -- "userId"        text            not null,
+  "status"        text            not null,
   "date"          date            not null,
   "amount"        integer         not null,
   "category"      text            not null,
