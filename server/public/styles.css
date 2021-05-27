@@ -1,7 +1,39 @@
-* {
-  box-sizing: border-box;
-}
-
 body {
   font-family: 'Kanit', sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.fas.fa-caret-square-left {
+  font-size: 20px;
+  margin-top: 6px;
+}
+
+.fas.fa-piggy-bank {
+  font-size: 30px;
+}
+
+.fas.fa-caret-square-left,
+.fas.fa-piggy-bank,
+.header-title {
+  color: #fd6f63;
+}
+
+.year-and-month {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fas.fa-chevron-left,
+.fas.fa-chevron-right {
+  font-size: 25px;
+}
+
+.year-and-month-h2 {
+  margin: 0 1.5rem 0.3rem 1.5rem;
 }

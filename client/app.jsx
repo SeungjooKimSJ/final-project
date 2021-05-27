@@ -24,9 +24,9 @@ export default class App extends React.Component {
     const { route } = this.state;
 
     if (route.path === '') {
-      return <Transaction />;
+      return <Home />;
     }
-    return <Home />;
+    // return <Home />;
   }
 
   render() {
