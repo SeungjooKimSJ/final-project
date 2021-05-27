@@ -27,24 +27,29 @@ export default function Home(props) {
         </div>
         <div>
           <ul>
-            <li><a href="#">Daily</a></li>
-            <li><a href="#">Weekly</a></li>
-            <li><a href="#">Monthly</a></li>
-            <li><a href="#">Calendar</a></li>
+            <li><a href="#" className="li-anchor daily">Daily</a></li>
+            <li><a href="#" className="li-anchor weekly">Weekly</a></li>
+            <li><a href="#" className="li-anchor monthly">Monthly</a></li>
+            <li><a href="#" className="li-anchor calendar">Calendar</a></li>
           </ul>
         </div>
-        <div>
-          <div>
-            <div>Income</div>
-            <div>$0</div>
+        <div className="current-balance">
+          <div className="income">
+            <div className="current-income">Income</div>
+            <div className="income-amount">$ 0</div>
           </div>
-          <div>
-            <div>Expenses</div>
-            <div>$0</div>
+          <div className="expenses">
+            <div className="current-expenses">Expenses</div>
+            <div className="expenses-amount">$ 0</div>
           </div>
-          <div>
-            <div>Total</div>
-            <div>$0</div>
+          <div className="total">
+            <div className="current-total">Total</div>
+            <div className="total-amount">$ 0</div>
+          </div>
+        </div>
+        <div className="empty-container">
+          <div className="plus-icon-container">
+            <i className="fas fa-plus-circle"></i>
           </div>
         </div>
       </main>

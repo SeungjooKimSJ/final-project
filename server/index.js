@@ -16,7 +16,6 @@ const app = express();
 const jsonMiddleware = express.json();
 
 app.use(staticMiddleware);
-app.use(errorMiddleware);
 app.use(jsonMiddleware);
 
 // app.get('/api/users/:userId', (req, res, next) => {
@@ -86,7 +85,7 @@ app.post('/api/transactions', (req, res, next) => {
 
 });
 
-// app.post('/api/transactions/');
+app.use(errorMiddleware);
 
 app.listen(process.env.PORT, () => {
   // eslint-disable-next-line no-console
