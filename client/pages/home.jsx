@@ -154,3 +154,112 @@ export default function Home(props) {
     </>
   );
 }
+
+// class Form extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     thisState = {
+//       depositOn: true
+//     }
+
+//     handleClickDeposit() {
+//       if(!this.state.depositOn) {
+//         this.setState({depositOn: true})
+//       } else {
+//         this.setState({ depositOn: false })
+
+//       }
+//     }
+//     <Form>{this.state.depositOn? 'deposit is on' ' : 'deposit is off'} </Form>
+
+//   }
+// } /* example */
+
+// class Home extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//       isClicked: false,
+//       mode:
+//     };
+//     this.handleClickDeposit = this.handleClickDeposit.bind(this);
+//     this.handleClickWithdraw = this.handleClickWithdraw.bind(this);
+//   }
+
+//   handleClickDeposit() {
+//     this.setState({
+//       isClicked: true
+//     });
+//   }
+
+//   handleClickWithdraw() {
+//     this.setState({
+//       isClicked: false
+//     });
+//   }
+
+//   render() {
+//     const isClicked = this.state.isClicked;
+//     let button;
+
+//     if (isClicked) {
+//       return (
+//         <header>
+//           <div className="header">
+//             <a href="#" className="previous-page">
+//               <i className="fas fa-caret-square-left"></i>
+//             </a>
+//             <h2 className="header-title">{isClicked ? 'Withdraw' : 'Deposit'}</h2>
+//             <div className="header-pig-icon">
+//               <i className="fas fa-piggy-bank"></i>
+//             </div>
+//           </div>
+//       </header>
+
+//         <button className="deposit-btn" onClick="{this.handleClickDeposit}">Deposit</button>
+//       );
+//     } else {
+//       return (
+//         <header>
+//           <div className="header">
+//             <a href="#" className="previous-page">
+//               <i className="fas fa-caret-square-left"></i>
+//             </a>
+//             <h2 className="header-title">Withdraw</h2>
+//             <div className="header-pig-icon">
+//               <i className="fas fa-piggy-bank"></i>
+//             </div>
+//           </div>
+//       </header>
+//         <button className="withdraw-btn" onClick="{this.handleClickWithdraw}">Withdraw</button>
+//       );
+//     }
+//   }
+// }
+
+// function ClickedDeposit(props) {
+//   return (
+//     <h2 className="header-title">Withdraw</h2>
+//   );
+// }
+
+// function ClickedWithdraw(props) {
+//   return (
+//     <h2 className="header-title">Deposit</h2>
+//   );
+// }
+
+// function DepositAndWithdraw(props) {
+//   const isClicked = props.isClicked;
+//   if (isClicked) {
+//     return (
+//       <ClickedDeposit />;
+//     );
+//   } else {
+//     return (
+//       <ClickedWithdraw />;
+//     );
+//   }
+// }
+
+// export default Home;
