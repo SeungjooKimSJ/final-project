@@ -1,9 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Home from './pages/home';
+// import Home from './pages/home';
+
+// ReactDOM.render(
+//   <Home />,
+//   document.querySelector('#root')
+// );
+
+import TransactionEntry from './pages/transaction-entry';
 
 ReactDOM.render(
-  <Home />,
+  <TransactionEntry />,
   document.querySelector('#root')
 );
 
