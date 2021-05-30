@@ -195,7 +195,7 @@ class Home extends React.Component {
   render() {
     const onClick = this.state.onClick;
     let button;
-    // const mode = this.state.mode;
+    const mode = this.state.mode;
 
     if (onClick) {
       button = <WithdrawBtn onClick={this.handleClickWithdraw} />;
@@ -210,7 +210,7 @@ class Home extends React.Component {
           <a href="#" className="previous-page">
             <i className="fas fa-caret-square-left"></i>
           </a>
-          <HeaderStatus onClick={onClick} /> {button}
+          <HeaderStatus onClick={mode} />
           <div className="header-pig-icon">
             <i className="fas fa-piggy-bank"></i>
           </div>
@@ -220,10 +220,10 @@ class Home extends React.Component {
       <form>
         <div className="button-holder-top">
           <div>
-            <button className="deposit-btn">Deposit</button>
+            <button className="deposit-btn" onClick={this.handleClickDeposit}>Deposit</button>
           </div>
           <div>
-            <button className="withdraw-btn">Withdraw</button>
+            <button className="withdraw-btn" onClick={this.handleClickWithdraw}>Withdraw</button>
           </div>
         </div>
 

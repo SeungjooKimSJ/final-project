@@ -43,9 +43,9 @@ class TransactionEntry extends React.Component {
     // const mode = this.state.mode;
 
     if (onClick) {
-      button = <WithdrawBtn onClick={this.handleClickWithdraw} />;
+      button = <WithdrawBtn onClick={this.handleWithdrawClick} />;
     } else {
-      button = <DepositBtn onClick={this.handleClickDeposit} />;
+      button = <DepositBtn onClick={this.handleDepositClick} />;
     }
 
     return (
@@ -55,7 +55,7 @@ class TransactionEntry extends React.Component {
             <a href="#" className="previous-page">
               <i className="fas fa-caret-square-left"></i>
             </a>
-            <HeaderStatus onClick={onClick} /> {button}
+            <HeaderStatus onClick={onClick} />
             <div className="header-pig-icon">
               <i className="fas fa-piggy-bank"></i>
             </div>
@@ -65,10 +65,10 @@ class TransactionEntry extends React.Component {
         <form>
           <div className="button-holder-top">
             <div>
-              <button className="deposit-btn">Deposit</button>
+              <button className="deposit-btn" onClick={this.handleClickDeposit}>Deposit</button>
             </div>
             <div>
-              <button className="withdraw-btn">Withdraw</button>
+              <button className="withdraw-btn" onClick={this.handleClickWithdrawk}>Withdraw</button>
             </div>
           </div>
 
