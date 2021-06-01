@@ -1,4 +1,5 @@
 import React from 'react';
+import CategoryModal from './category-modal';
 
 class TransactionEntry extends React.Component {
   constructor(props) {
@@ -107,8 +108,8 @@ class TransactionEntry extends React.Component {
           </div>
         </form>
 
-        <div className="empty-container2">
-
+        <div className="modal-container hidden">
+          <CategoryModal />
         </div>
 
         <footer>

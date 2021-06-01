@@ -20,7 +20,7 @@ import React from 'react';
 //           <div>
 //             <i className="fas fa-chevron-left"></i>
 //           </div>
-//           <h2 className="year-and-month-h2">2021.05</h2>
+//           <h2 className="year-and-month-h2">2021. 05</h2>
 //           <div>
 //             <i className="fas fa-chevron-right"></i>
 //           </div>

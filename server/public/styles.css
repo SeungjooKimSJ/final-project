@@ -265,8 +265,52 @@ input:focus {
   background-color: #78b7f6;
 }
 
-.empty-container2 {
-  margin-top: 0.5rem;
+.modal-container {
+  margin-top: 1rem;
   background-color: #f0f0f0;
-  height: 37vh;
+  height: 35.8vh;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  background-color: #f0f0f0;
+}
+
+.modal-category {
+  /* display: flex; */
+  background-color: #000;
+  color: #fff;
+  padding-left: 2rem;
+  font-size: 10px;
+}
+
+.modal-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: #f0f0f0;
+}
+
+.each-btn {
+  padding: 10px 15px;
+  margin: 3px 0;
+  border: 1px solid #000;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  background-color: #fff;
+  transition: background-color 0.7s ease-in-out;
+}
+
+.each-btn:hover {
+  background-color: #78b7f6;
+}
+
+.each-btn:focus {
+  outline: none;
+}
+
+.hidden {
+  display: none;
 }
