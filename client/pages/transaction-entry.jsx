@@ -1,5 +1,6 @@
 import React from 'react';
-import CategoryModal from './category-modal';
+import FormControl from '../components/transaction-entry/form-control';
+import CategoryModal from '../components/transaction-entry/category-modal';
 
 class TransactionEntry extends React.Component {
   constructor(props) {
@@ -38,15 +39,91 @@ class TransactionEntry extends React.Component {
     });
   }
 
+  // renderForm() {
+  //   return (
+  //     <form>
+  //       <div className="button-holder-top">
+  //         <div>
+  //           <button className="deposit-btn" onClick={this.handleClickDeposit}>Deposit</button>
+  //         </div>
+  //         <div>
+  //           <button className="withdraw-btn" onClick={this.handleClickWithdrawk}>Withdraw</button>
+  //         </div>
+  //       </div>
+
+  //       <div className="date-holder">
+  //         <label htmlFor="date">Date</label>
+  //         <div className="input-holder-1">
+  //           <input required type="text" id="date" />
+  //         </div>
+  //       </div>
+  //       <div className="category-holder">
+  //         <label htmlFor="category">Category</label>
+  //         <div className="input-holder-2">
+  //           <input required type="text" id="category" />
+  //         </div>
+  //       </div>
+  //       <div className="amount-holder">
+  //         <label htmlFor="amount">Amount</label>
+  //         <div className="input-holder-3">
+  //           <input required type="text" id="amount" />
+  //         </div>
+  //       </div>
+  //       <div className="description-holder">
+  //         <label htmlFor="description">Description</label>
+  //         <div className="input-holder-4">
+  //           <input required type="text" id="description" />
+  //         </div>
+  //       </div>
+
+  //       <div className="button-holder-bottom">
+  //         <div>
+  //           <button className="cancel-btn">Cancel</button>
+  //         </div>
+  //         <div>
+  //           <button className="save-btn">Save</button>
+  //         </div>
+  //       </div>
+  //     </form>
+  //   );
+  // }
+
+  renderCategoryModal() {
+    return (
+      <div className="modal-container hidden">
+        <CategoryModal />
+      </div>
+    );
+  }
+
+  renderFooter() {
+    return (
+      <footer>
+        <div>
+          <i className="far fa-folder-open"></i>
+        </div>
+        <div>
+          <i className="fas fa-chart-pie"></i>
+        </div>
+        <div>
+          <i className="fas fa-money-check-alt"></i>
+        </div>
+        <div>
+          <i className="fas fa-user-cog"></i>
+        </div>
+      </footer>
+    );
+  }
+
   render() {
     const onClick = this.state.onClick;
-    let button;
+    // let button;
     // const mode = this.state.mode;
 
     if (onClick) {
-      button = <WithdrawBtn onClick={this.handleWithdrawClick} />;
+      <WithdrawBtn onClick={this.handleWithdrawClick} />;
     } else {
-      button = <DepositBtn onClick={this.handleDepositClick} />;
+      <DepositBtn onClick={this.handleDepositClick} />;
     }
 
     return (
@@ -63,69 +140,11 @@ class TransactionEntry extends React.Component {
           </div>
         </header>
 
-        <form>
-          <div className="button-holder-top">
-            <div>
-              <button className="deposit-btn" onClick={this.handleClickDeposit}>Deposit</button>
-            </div>
-            <div>
-              <button className="withdraw-btn" onClick={this.handleClickWithdrawk}>Withdraw</button>
-            </div>
-          </div>
+        <FormControl />
 
-          <div className="date-holder">
-            <label htmlFor="date">Date</label>
-            <div className="input-holder-1">
-              <input required type="text" id="date" />
-            </div>
-          </div>
-          <div className="category-holder">
-            <label htmlFor="category">Category</label>
-            <div className="input-holder-2">
-              <input required type="text" id="category" />
-            </div>
-          </div>
-          <div className="amount-holder">
-            <label htmlFor="amount">Amount</label>
-            <div className="input-holder-3">
-              <input required type="text" id="amount" />
-            </div>
-          </div>
-          <div className="description-holder">
-            <label htmlFor="description">Description</label>
-            <div className="input-holder-4">
-              <input required type="text" id="description" />
-            </div>
-          </div>
+        {this.renderCategoryModal()}
 
-          <div className="button-holder-bottom">
-            <div>
-              <button className="cancel-btn">Cancel</button>
-            </div>
-            <div>
-              <button className="save-btn">Save</button>
-            </div>
-          </div>
-        </form>
-
-        <div className="modal-container hidden">
-          <CategoryModal />
-        </div>
-
-        <footer>
-          <div>
-            <i className="far fa-folder-open"></i>
-          </div>
-          <div>
-            <i className="fas fa-chart-pie"></i>
-          </div>
-          <div>
-            <i className="fas fa-money-check-alt"></i>
-          </div>
-          <div>
-            <i className="fas fa-user-cog"></i>
-          </div>
-        </footer>
+        {this.renderFooter()}
       </>
     );
   }
