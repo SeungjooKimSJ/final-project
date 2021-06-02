@@ -6,87 +6,23 @@ class TransactionEntry extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      onClick: false,
-      mode: 'deposit'
+      depositOn: false
     };
     this.handleClickDeposit = this.handleClickDeposit.bind(this);
     this.handleClickWithdraw = this.handleClickWithdraw.bind(this);
-    this.handleWithdrawClick = this.handleWithdrawClick.bind(this);
-    this.handleDepositClick = this.handleDepositClick.bind(this);
   }
 
   handleClickDeposit() {
     this.setState({
-      onClick: true
+      depositOn: true
     });
   }
 
   handleClickWithdraw() {
     this.setState({
-      onClick: false
+      depositOn: false
     });
   }
-
-  handleWithdrawClick() {
-    this.setState({
-      mode: 'withdraw'
-    });
-  }
-
-  handleDepositClick() {
-    this.setState({
-      mode: 'deposit'
-    });
-  }
-
-  // renderForm() {
-  //   return (
-  //     <form>
-  //       <div className="button-holder-top">
-  //         <div>
-  //           <button className="deposit-btn" onClick={this.handleClickDeposit}>Deposit</button>
-  //         </div>
-  //         <div>
-  //           <button className="withdraw-btn" onClick={this.handleClickWithdrawk}>Withdraw</button>
-  //         </div>
-  //       </div>
-
-  //       <div className="date-holder">
-  //         <label htmlFor="date">Date</label>
-  //         <div className="input-holder-1">
-  //           <input required type="text" id="date" />
-  //         </div>
-  //       </div>
-  //       <div className="category-holder">
-  //         <label htmlFor="category">Category</label>
-  //         <div className="input-holder-2">
-  //           <input required type="text" id="category" />
-  //         </div>
-  //       </div>
-  //       <div className="amount-holder">
-  //         <label htmlFor="amount">Amount</label>
-  //         <div className="input-holder-3">
-  //           <input required type="text" id="amount" />
-  //         </div>
-  //       </div>
-  //       <div className="description-holder">
-  //         <label htmlFor="description">Description</label>
-  //         <div className="input-holder-4">
-  //           <input required type="text" id="description" />
-  //         </div>
-  //       </div>
-
-  //       <div className="button-holder-bottom">
-  //         <div>
-  //           <button className="cancel-btn">Cancel</button>
-  //         </div>
-  //         <div>
-  //           <button className="save-btn">Save</button>
-  //         </div>
-  //       </div>
-  //     </form>
-  //   );
-  // }
 
   renderCategoryModal() {
     return (
@@ -116,14 +52,14 @@ class TransactionEntry extends React.Component {
   }
 
   render() {
-    const onClick = this.state.onClick;
+    const depositOn = this.state.depositOn;
+    // const onClick = this.state.onClick;
     // let button;
-    // const mode = this.state.mode;
 
-    if (onClick) {
-      <WithdrawBtn onClick={this.handleWithdrawClick} />;
+    if (depositOn) {
+      <WithdrawBtn onClick={this.handleClickWithdraw} />;
     } else {
-      <DepositBtn onClick={this.handleDepositClick} />;
+      <DepositBtn onClick={this.handleClickDeposit} />;
     }
 
     return (
@@ -133,14 +69,14 @@ class TransactionEntry extends React.Component {
             <a href="#" className="previous-page">
               <i className="fas fa-caret-square-left"></i>
             </a>
-            <HeaderStatus onClick={onClick} />
+            <HeaderStatus depositOn={depositOn} />
             <div className="header-pig-icon">
               <i className="fas fa-piggy-bank"></i>
             </div>
           </div>
         </header>
 
-        <FormControl />
+        <FormControl depositOn={this.state.depositOn} />
 
         {this.renderCategoryModal()}
 
