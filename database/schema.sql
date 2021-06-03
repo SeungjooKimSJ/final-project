@@ -25,3 +25,15 @@ create table "transactions" (
   "updatedAt"     timestamptz(6)  not null default now(),
   primary key ("transactionId")
 );
+
+-- create table "deposit" (
+--   "depositId"     serial,
+--   "status"        text            not null,
+--   "date"          date            not null,
+--   "amount"        integer         not null,
+--   "category"      text            not null,
+--   "description"   text            not null,
+--   "createdAt"     timestamptz(6)  not null default now(),
+--   "updatedAt"     timestamptz(6)  not null default now(),
+--   primary key ("depositId")
+-- );

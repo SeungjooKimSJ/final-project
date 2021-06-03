@@ -56,12 +56,6 @@ class TransactionEntry extends React.Component {
     // const onClick = this.state.onClick;
     // let button;
 
-    if (depositOn) {
-      <WithdrawBtn onClick={this.handleClickWithdraw} />;
-    } else {
-      <DepositBtn onClick={this.handleClickDeposit} />;
-    }
-
     return (
       <>
         <header>
@@ -74,6 +68,11 @@ class TransactionEntry extends React.Component {
               <i className="fas fa-piggy-bank"></i>
             </div>
           </div>
+          <div className="button-holder-top">
+            <DepositBtn depositOn={this.state.depositOn} onClick={this.handleClickDeposit} />
+            <WithdrawBtn depositOn={this.state.depositOn} onClick={this.handleClickWithdraw} />
+          </div>
+
         </header>
 
         <FormControl depositOn={this.state.depositOn} />
@@ -99,8 +98,8 @@ function HeaderWithdraw(props) {
 }
 
 function HeaderStatus(props) {
-  const onClick = props.onClick;
-  if (onClick) {
+  const depositOn = props.depositOn;
+  if (depositOn) {
     return <HeaderDeposit />;
   } else {
     return <HeaderWithdraw />;
@@ -108,15 +107,27 @@ function HeaderStatus(props) {
 }
 
 function DepositBtn(props) {
-  return (
-    <button className="deposit-btn" onClick={props.onClick}>Deposit</button>
-  );
+  if (props.depositOn) {
+    return (
+      <button className="deposit-btn" onClick={props.onClick}>Deposit</button>
+    );
+  } else {
+    return (
+      <button className="deposit-btn btn-off" onClick={props.onClick}>Deposit</button>
+    );
+  }
 }
 
 function WithdrawBtn(props) {
-  return (
-    <button className="deposit-btn" onClick={props.onClick}>Withdraw</button>
-  );
+  if (!props.depositOn) {
+    return (
+      <button className="withdraw-btn" onClick={props.onClick}>Withdraw</button>
+    );
+  } else {
+    return (
+      <button className="withdraw-btn btn-off" onClick={props.onClick}>Withdraw</button>
+    );
+  }
 }
 
 export default TransactionEntry;

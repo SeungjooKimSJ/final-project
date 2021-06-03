@@ -2,9 +2,9 @@ body {
   font-family: 'Kanit', sans-serif;
 }
 
-header {
+/* header {
   border-bottom: 1px solid #acacac;
-}
+} */
 
 .header {
   display: flex;
@@ -135,34 +135,47 @@ footer {
   color: #fd6f63;
 }
 
+.button-holder-top {
+  border-top: 1px solid #acacac;
+  padding-top: 1.5rem;
+}
+
+.button-holder-bottom {
+  margin: 1rem 0;
+  padding-top: 0.5rem;
+}
+
 .button-holder-top,
 .button-holder-bottom {
   display: flex;
   justify-content: space-around;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
 }
 
 .deposit-btn {
-  /* color: #000;
-  border: 2px solid #000; */
+  color: #78b7f6;
+  border: 2px solid #78b7f6;
   padding: 5px 25px;
 }
 
 .withdraw-btn {
-  /* color: #fd6f63;
-  border: 2px solid #fd6f63; */
+  color: #fd6f63;
+  border: 2px solid #fd6f63;
   padding: 5px 20px;
 }
 
 .deposit-btn,
 .withdraw-btn {
-  color: #000;
-  border: 2px solid #000;
+  /* color: #000;
+  border: 2px solid #000; */
   font-size: 14px;
   border-radius: 8px;
   background-color: transparent;
   font-weight: 600;
+}
+
+.btn-off {
+  color: #000;
+  border: 2px solid #000;
 }
 
 .deposit-btn:hover {
@@ -185,6 +198,10 @@ footer {
   outline: none;
 }
 
+form {
+  margin-top: 0.5rem;
+}
+
 .date-holder,
 .category-holder,
 .amount-holder,
@@ -201,6 +218,7 @@ footer {
 } */
 
 .description-holder {
+  padding-bottom: 2rem;
   border-bottom: 8px solid #acacac;
 }
 
@@ -223,7 +241,8 @@ label {
   margin-left: 1.4rem;
 }
 
-input {
+input,
+.input-holder-2 {
   color: #000;
   text-align: center;
   padding: 5px 0;
@@ -234,6 +253,25 @@ input {
 input:focus {
   outline: none;
   border-bottom: 1px solid #fd6f63;
+}
+
+select {
+  border: none;
+}
+
+#date:hover,
+select:hover {
+  color: #fd6f63;
+}
+
+#date:focus,
+select:focus {
+  color: #000;
+}
+
+select:focus,
+select:active {
+  outline: none;
 }
 
 .cancel-btn {
@@ -268,7 +306,7 @@ input:focus {
 .modal-container {
   margin-top: 1rem;
   background-color: #f0f0f0;
-  height: 35.8vh;
+  height: 33vh;
 }
 
 .modal-content {
