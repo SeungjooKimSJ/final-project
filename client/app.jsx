@@ -1,7 +1,6 @@
 import React from 'react';
 import parseRoute from './lib/parse-route';
 import Home from './pages/home';
-// import TransactionEntry from './pages/transaction-entry';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -27,7 +26,6 @@ export default class App extends React.Component {
     if (route.path === '') {
       return <Home />;
     }
-    // return <Home />;
   }
 
   render() {

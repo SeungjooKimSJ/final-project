@@ -1,18 +1,6 @@
 import React from 'react';
 
 class HomeMain extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     addOn:
-  //   };
-  //   this.handleAddTransaction = this.handleAddTransaction.bind(this);
-  // }
-
-  // handleAddTransaction() {
-
-  // }
-
   render() {
     return (
       <main>

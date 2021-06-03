@@ -1,13 +1,6 @@
 import React from 'react';
 
 class CategoryModal extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     onChange:
-  //   };
-  // }
-
   renderCategoryBtns() {
     return (
       <>

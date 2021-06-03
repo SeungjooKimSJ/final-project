@@ -1,13 +1,6 @@
 import React from 'react';
 
 class CalendarModal extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-
-  //   };
-  // }
-
   render() {
     return (
       <div className="calendar-content">
