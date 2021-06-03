@@ -7,8 +7,7 @@ class FormControl extends React.Component {
       date: '',
       category: '',
       amount: '',
-      description: '',
-      'is-deposit-on': this.props.depositOn
+      description: ''
     };
     this.handleDate = this.handleDate.bind(this);
     this.handleCategory = this.handleCategory.bind(this);
@@ -16,6 +15,7 @@ class FormControl extends React.Component {
     this.handleDescription = this.handleDescription.bind(this);
     this.handleSubmitDeposit = this.handleSubmitDeposit.bind(this);
     this.handleSubmitWithdraw = this.handleSubmitWithdraw.bind(this);
+    this.cancelButton = this.cancelButton.bind(this);
   }
 
   handleDate(event) {
@@ -32,7 +32,7 @@ class FormControl extends React.Component {
 
   handleAmount(event) {
     this.setState({
-      amount: event.target.value
+      amount: parseInt(event.target.value)
     });
   }
 
@@ -42,14 +42,57 @@ class FormControl extends React.Component {
     });
   }
 
+  cancelButton(event) {
+    this.setState({
+      date: '',
+      category: '',
+      amount: '',
+      description: ''
+    });
+    window.location.hash = '#';
+  }
+
   handleSubmitDeposit(event) {
     event.preventDefault();
-    // console.log('Deposit:', this.state);
+
+    const depositData = {
+      date: this.state.date,
+      category: this.state.category,
+      amount: parseInt(this.state.amount),
+      description: this.state.description
+      // transactionType: 'deposit'
+    };
+
+    const headers = new Headers();
+    headers.set('Content-Type', 'application/json');
+
+    const bodyJSON = JSON.stringify(depositData);
+
+    const req = {
+      method: 'POST',
+      headers: headers,
+      body: bodyJSON
+    };
+
+    fetch('/api/transactions', req)
+      .then(res => res.json())
+      .then(transaction => {
+        // eslint-disable-next-line no-console
+        console.log(depositData);
+        this.setState({
+          transaction: depositData
+        });
+      });
+    // .catch(err => next(err));
+    // eslint-disable-next-line no-console
+    console.log('Deposit:', this.state);
   }
 
   handleSubmitWithdraw(event) {
     event.preventDefault();
-    // console.log('Withdraw:', this.state);
+
+    // eslint-disable-next-line no-console
+    console.log('Withdraw:', this.state);
   }
 
   renderDateHolder() {
@@ -73,11 +116,11 @@ class FormControl extends React.Component {
           <select id="category" name="category" required
           value={this.state.category} onChange={this.handleCategory}>
             <option value="">Select</option>
-            <option value="food">Food</option>
-            <option value="grocery">Grocery</option>
-            <option value="payment">Payment</option>
-            <option value="check">Check</option>
-            <option value="shopping">Shopping</option>
+            <option value="Food">Food</option>
+            <option value="Grocery">Grocery</option>
+            <option value="Payment">Payment</option>
+            <option value="Check">Check</option>
+            <option value="Shopping">Shopping</option>
             <option value="homegoods">Home Goods</option>
             <option value="healthy">Healthy</option>
             <option value="beauty">Beauty</option>
@@ -86,8 +129,6 @@ class FormControl extends React.Component {
             <option value="entertainment">Entertainment</option>
             <option value="etc">Etc</option>
           </select>
-          {/* <input type="text" id="category" name="category"
-            value={this.state.category} onChange={this.handleCategory} /> */}
         </div>
       </div>
     );
@@ -121,7 +162,7 @@ class FormControl extends React.Component {
     return (
       <div className="button-holder-bottom">
         <div>
-          <button className="cancel-btn">Cancel</button>
+          <button className="cancel-btn" onClick={this.cancelButton}>Cancel</button>
         </div>
         <div>
           <button className="save-btn">Save</button>

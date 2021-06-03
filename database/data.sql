@@ -3,14 +3,16 @@ values ('SJ Kim');
 
 insert into "transactions" (
   "status",
+  "transactionType",
   "date",
   "amount",
   "category",
   "description"
 )
 values (
-  'expenses',
-  '05.26.21',
+  'Expenses',
+  'Withdraw',
+  '2021-05-26',
   50,
   'Grocery',
   'Target'

@@ -53,8 +53,6 @@ class TransactionEntry extends React.Component {
 
   render() {
     const depositOn = this.state.depositOn;
-    // const onClick = this.state.onClick;
-    // let button;
 
     return (
       <>

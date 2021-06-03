@@ -2,10 +2,6 @@ body {
   font-family: 'Kanit', sans-serif;
 }
 
-/* header {
-  border-bottom: 1px solid #acacac;
-} */
-
 .header {
   display: flex;
   justify-content: space-around;
@@ -165,8 +161,6 @@ footer {
 
 .deposit-btn,
 .withdraw-btn {
-  /* color: #000;
-  border: 2px solid #000; */
   font-size: 14px;
   border-radius: 8px;
   background-color: transparent;
@@ -211,12 +205,6 @@ form {
   padding-bottom: 1rem;
 }
 
-/* .date-holder,
-.category-holder,
-.amount-holder {
-  border-bottom: 1px solid #acacac;
-} */
-
 .description-holder {
   padding-bottom: 2rem;
   border-bottom: 8px solid #acacac;
@@ -255,22 +243,22 @@ input:focus {
   border-bottom: 1px solid #fd6f63;
 }
 
-select {
+#category {
   border: none;
 }
 
 #date:hover,
-select:hover {
+#category:hover {
   color: #fd6f63;
 }
 
 #date:focus,
-select:focus {
+#category:focus {
   color: #000;
 }
 
-select:focus,
-select:active {
+#category:focus,
+#category:active {
   outline: none;
 }
 
@@ -316,7 +304,6 @@ select:active {
 }
 
 .modal-category {
-  /* display: flex; */
   background-color: #000;
   color: #fff;
   padding-left: 2rem;
