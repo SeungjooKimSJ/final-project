@@ -66,9 +66,7 @@ class FormControl extends React.Component {
 
     const headers = new Headers();
     headers.set('Content-Type', 'application/json');
-
     const bodyJSON = JSON.stringify(depositData);
-
     const req = {
       method: 'POST',
       headers: headers,
@@ -78,8 +76,6 @@ class FormControl extends React.Component {
     fetch('/api/transactions', req)
       .then(res => res.json())
       .then(transaction => {
-        // eslint-disable-next-line no-console
-        console.log(depositData);
         this.setState({
           transaction: depositData
         });
@@ -142,13 +138,13 @@ class FormControl extends React.Component {
             <option value="Payment">Payment</option>
             <option value="Check">Check</option>
             <option value="Shopping">Shopping</option>
-            <option value="homegoods">Home Goods</option>
-            <option value="healthy">Healthy</option>
-            <option value="beauty">Beauty</option>
-            <option value="transportation">Transportation</option>
-            <option value="education">Education</option>
-            <option value="entertainment">Entertainment</option>
-            <option value="etc">Etc</option>
+            <option value="Homegoods">Home Goods</option>
+            <option value="Healthy">Healthy</option>
+            <option value="Beauty">Beauty</option>
+            <option value="Transportation">Transportation</option>
+            <option value="Education">Education</option>
+            <option value="Entertainment">Entertainment</option>
+            <option value="Etc">Etc</option>
           </select>
         </div>
       </div>
