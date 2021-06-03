@@ -59,8 +59,9 @@ class FormControl extends React.Component {
       date: this.state.date,
       category: this.state.category,
       amount: parseInt(this.state.amount),
-      description: this.state.description
-      // transactionType: 'deposit'
+      description: this.state.description,
+      status: 'Income',
+      transactionType: 'Deposit'
     };
 
     const headers = new Headers();
@@ -83,16 +84,36 @@ class FormControl extends React.Component {
           transaction: depositData
         });
       });
-    // .catch(err => next(err));
-    // eslint-disable-next-line no-console
-    console.log('Deposit:', this.state);
   }
 
   handleSubmitWithdraw(event) {
     event.preventDefault();
 
-    // eslint-disable-next-line no-console
-    console.log('Withdraw:', this.state);
+    const withdrawData = {
+      date: this.state.date,
+      category: this.state.category,
+      amount: parseInt(this.state.amount),
+      description: this.state.description,
+      status: 'Expenses',
+      transactionType: 'Withdraw'
+    };
+
+    const headers = new Headers();
+    headers.set('Content-Type', 'application/json');
+    const bodyJSON = JSON.stringify(withdrawData);
+    const req = {
+      method: 'POST',
+      headers: headers,
+      body: bodyJSON
+    };
+
+    fetch('/api/transactions', req)
+      .then(res => res.json())
+      .then(transaction => {
+        this.setState({
+          transaction: withdrawData
+        });
+      });
   }
 
   renderDateHolder() {
