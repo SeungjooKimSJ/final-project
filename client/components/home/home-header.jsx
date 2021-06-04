@@ -3,7 +3,7 @@ import React from 'react';
 export default function HomeHeader(props) {
   return (
     <header>
-      <div className="header">
+      <div className="header main">
         <a href="#" className="previous-page">
           <i className="fas fa-caret-square-left"></i>
         </a>

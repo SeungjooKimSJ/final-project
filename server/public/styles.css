@@ -8,6 +8,10 @@ body {
   align-items: center;
 }
 
+.header.main {
+  border-bottom: 1px solid #acacac;
+}
+
 .fas.fa-caret-square-left {
   font-size: 20px;
   margin-top: 6px;
@@ -54,10 +58,10 @@ li {
   color: #acacac;
 }
 
-.li-anchor.daily {
+/* .li-anchor.daily {
   border-bottom: 2px solid #f55346;
   color: #000;
-}
+} */
 
 .current-balance {
   display: flex;
@@ -92,7 +96,7 @@ li {
   margin-top: 0.5rem;
   border-top: 8px solid #acacac;
   background-color: #f0f0f0;
-  height: 62vh;
+  height: 62.1vh;
 }
 
 .plus-icon-container {
@@ -103,9 +107,11 @@ li {
 .fas.fa-plus-circle {
   color: #fd6f63;
   font-size: 40px;
-  padding: 0 2rem 1.5rem 0;
+
+  /* padding: 0 2rem 1.5rem 0; */
   position: absolute;
-  bottom: 4rem;
+  bottom: 5.5rem;
+  right: 2rem;
 }
 
 footer {

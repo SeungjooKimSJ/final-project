@@ -1,4 +1,5 @@
 import React from 'react';
+// import Daily from './expenditure-history/daily';
 
 class HomeMain extends React.Component {
   render() {
@@ -8,7 +9,7 @@ class HomeMain extends React.Component {
           <div>
             <i className="fas fa-chevron-left"></i>
           </div>
-          <h2 className="year-and-month-h2">2021. 05</h2>
+          <h2 className="year-and-month-h2">2021. 06</h2>
           <div>
             <i className="fas fa-chevron-right"></i>
           </div>
@@ -37,9 +38,12 @@ class HomeMain extends React.Component {
         </div>
         <div className="empty-container">
           <div className="plus-icon-container">
-            <i className="fas fa-plus-circle"></i>
+            <a href="#add-transaction">
+              <i className="fas fa-plus-circle"></i>
+            </a>
           </div>
         </div>
+        {/* <Daily /> */}
       </main>
     );
   }
