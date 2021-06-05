@@ -16,7 +16,7 @@ class HomeMain extends React.Component {
         </div>
         <div>
           <ul>
-            <li><a href="#" className="li-anchor daily">Daily</a></li>
+            <li><a href="#daily" className="li-anchor daily">Daily</a></li>
             <li><a href="#" className="li-anchor weekly">Weekly</a></li>
             <li><a href="#" className="li-anchor monthly">Monthly</a></li>
             <li><a href="#" className="li-anchor calendar">Calendar</a></li>

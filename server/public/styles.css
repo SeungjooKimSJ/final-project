@@ -345,3 +345,90 @@ input:focus {
 .hidden {
   display: none;
 }
+
+.transaction-ul {
+  display: flex;
+  flex-direction: column;
+}
+
+.transaction-li {
+  display: flex;
+  flex-direction: column;
+
+  /* margin: 0 0.5rem; */
+}
+
+.daily-li {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 1rem;
+}
+
+.li-date {
+  font-weight: 800;
+}
+
+.li-year-month {
+  display: flex;
+  position: relative;
+  right: 5rem;
+}
+
+.li-year {
+  margin-right: 1rem;
+}
+
+.daily-balance {
+  display: flex;
+  position: relative;
+  right: 8rem;
+}
+
+.li-category-description-amount {
+  display: flex;
+  justify-content: space-around;
+}
+
+
+/* .exUl {
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.exLi {
+  display: flex;
+  justify-content: space-around;
+}
+
+.liDiv {
+  display: flex;
+  justify-content: space-around;
+}
+
+.liYearMonth,
+.blue {
+  margin-right: 3rem;
+}
+
+.money {
+  display: flex;
+  justify-content: space-around;
+} */
+
+.blue,
+.blue-total {
+  color: #78b7f6;
+}
+
+.red,
+.red-total {
+  color: #f55346;
+}
+
+.red-total {
+  position: relative;
+  left: 4rem;
+}

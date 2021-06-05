@@ -2,6 +2,7 @@ import React from 'react';
 import parseRoute from './lib/parse-route';
 import Home from './pages/home';
 import TransactionEntry from './pages/transaction-entry';
+import Daily from './components/home/expenditure-history/daily';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -28,6 +29,9 @@ export default class App extends React.Component {
     }
     if (route.path === 'add-transaction') {
       return <TransactionEntry />;
+    }
+    if (route.path === 'daily') {
+      return <Daily />;
     }
   }
 

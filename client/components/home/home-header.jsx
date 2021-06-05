@@ -8,9 +8,9 @@ export default function HomeHeader(props) {
           <i className="fas fa-caret-square-left"></i>
         </a>
         <h2 className="header-title">Clever Consumption</h2>
-        <div className="header-pig-icon">
+        <a href="#" className="header-pig-icon">
           <i className="fas fa-piggy-bank"></i>
-        </div>
+        </a>
       </div>
     </header>
   );
