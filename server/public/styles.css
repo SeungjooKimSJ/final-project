@@ -354,14 +354,15 @@ input:focus {
 .transaction-li {
   display: flex;
   flex-direction: column;
-
-  /* margin: 0 0.5rem; */
+  border-top: 6px solid #acacac;
+  padding: 0.5rem 0;
 }
 
 .daily-li {
   display: flex;
   justify-content: space-between;
   margin-left: 1rem;
+  padding-bottom: 0.5rem;
 }
 
 .li-date {
@@ -371,17 +372,22 @@ input:focus {
 .li-year-month {
   display: flex;
   position: relative;
-  right: 5rem;
+  right: 4rem;
 }
 
 .li-year {
-  margin-right: 1rem;
+  margin-right: 0.5rem;
 }
 
 .daily-balance {
   display: flex;
   position: relative;
   right: 8rem;
+}
+
+.each-transaction {
+  border-top: 1px solid #acacac;
+  padding-top: 0.5rem;
 }
 
 .li-category-description-amount {
