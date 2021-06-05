@@ -366,23 +366,26 @@ input:focus {
 }
 
 .li-date {
-  font-weight: 800;
+  font-size: 18px;
+  font-weight: 1000;
 }
 
-.li-year-month {
+.li-year-month-day {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   position: relative;
-  right: 4rem;
+  right: 5rem;
 }
 
-.li-year {
-  margin-right: 0.5rem;
+.li-week-of-day {
+  font-size: 12px;
 }
 
 .daily-balance {
   display: flex;
   position: relative;
-  right: 8rem;
+  right: 6rem;
 }
 
 .each-transaction {
@@ -393,6 +396,26 @@ input:focus {
 .li-category-description-amount {
   display: flex;
   justify-content: space-around;
+  align-items: center;
+  position: relative;
+  right: 1rem;
+}
+
+.li-category {
+  color: #acacac;
+  font-size: 0.8rem;
+}
+
+.li-description {
+  position: inherit;
+  right: 2rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.li-amount {
+  position: inherit;
+  right: 2rem;
 }
 
 

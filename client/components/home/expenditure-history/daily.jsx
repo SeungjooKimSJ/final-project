@@ -27,6 +27,8 @@ class Daily extends React.Component {
       const dateOnly = newDate.getDate();
       const monthOnly = newDate.getMonth();
       const yearOnly = newDate.getFullYear();
+      const months = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'];
+      const month = months[monthOnly];
       const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
       const dayName = days[newDate.getDay()];
 
@@ -43,10 +45,9 @@ class Daily extends React.Component {
             <div className="li-date">
               {dateOnly}
             </div>
-            <div className="li-year-month">
-              <div className="li-year">{yearOnly}</div>
-              <div className="li-month">{monthOnly}</div>
-              <div className="li-day">{dayName}</div>
+            <div className="li-year-month-day">
+              <div className="li-year-month">{yearOnly} . {month}</div>
+              <div className="li-week-of-day">{dayName}</div>
             </div>
             <div className="daily-balance">
               <div className="blue-total">$ 0</div>
@@ -79,7 +80,7 @@ class Daily extends React.Component {
   }
 
   render() {
-    // const toSumDeposit = (x, y) => {
+    // const getSumDeposit = (x, y) => {
     //   if (this.props.transaction.transactionType === 'Deposit') {
     //     x = this.props.transaction.amount;
     //   } else {
@@ -89,7 +90,7 @@ class Daily extends React.Component {
 
     //   return add;
     // };
-    // const sumDeposit = this.props.transaction.amount.reduce(toSumDeposit);
+    // const sumDeposit = this.props.transaction.amount.reduce(getSumDeposit);
 
     return this.state.isLoading
       ? <p>Loading...</p>
