@@ -92,11 +92,10 @@ li {
   align-items: center;
 }
 
-.empty-container {
+.list-and-icon-container {
   margin-top: 0.5rem;
   border-top: 8px solid #acacac;
   background-color: #f0f0f0;
-  height: 62.1vh;
 }
 
 .plus-icon-container {
@@ -342,20 +341,23 @@ input:focus {
   outline: none;
 }
 
-.hidden {
-  display: none;
-}
-
 .transaction-ul {
   display: flex;
   flex-direction: column;
 }
 
+.transaction-ul.clicked {
+  background-color: #fff;
+}
+
 .transaction-li {
   display: flex;
   flex-direction: column;
-  border-top: 6px solid #acacac;
   padding: 0.5rem 0;
+}
+
+.transaction-li:nth-child(n+2) {
+  border-top: 6px solid #acacac;
 }
 
 .daily-li {
@@ -460,4 +462,8 @@ input:focus {
 .red-total {
   position: relative;
   left: 4rem;
+}
+
+.hidden {
+  display: none;
 }

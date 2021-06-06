@@ -1,5 +1,5 @@
 import React from 'react';
-// import Daily from './expenditure-history/daily';
+import Daily from './expenditure-history/daily';
 
 class HomeMain extends React.Component {
   render() {
@@ -36,14 +36,14 @@ class HomeMain extends React.Component {
             <div className="total-amount">$ 0</div>
           </div>
         </div>
-        <div className="empty-container">
+        <div className="list-and-icon-container">
+          <Daily />
           <div className="plus-icon-container">
             <a href="#add-transaction">
               <i className="fas fa-plus-circle"></i>
             </a>
           </div>
         </div>
-        {/* <Daily /> */}
       </main>
     );
   }

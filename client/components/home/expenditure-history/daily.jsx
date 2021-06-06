@@ -19,7 +19,79 @@ class Daily extends React.Component {
       .catch(err => console.error('Fetch failed!', err));
   }
 
-  renderTransactionLi() {
+  // renderTransactionLi() {
+  //   const transactionLi = this.state.transactionHistory;
+  //   const liTransaction = transactionLi.map(transaction => {
+  //     const timeString = transaction.date;
+  //     const newDate = new Date(timeString);
+  //     const dateOnly = newDate.getDate();
+  //     const monthOnly = newDate.getMonth();
+  //     const yearOnly = newDate.getFullYear();
+  //     const months = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'];
+  //     const month = months[monthOnly];
+  //     const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  //     const dayName = days[newDate.getDay()];
+
+  //     let amountStatus;
+  //     if (transaction.transactionType === 'Deposit') {
+  //       amountStatus = <div className="blue">${transaction.amount}</div>;
+  //     } else {
+  //       amountStatus = <div className="red">${transaction.amount}</div>;
+  //     }
+
+  //     return (
+  //       <li key={transaction.transactionId} className="transaction-li">
+  //         <div className="daily-li">
+  //           <div className="li-date">
+  //             {dateOnly}
+  //           </div>
+  //           <div className="li-year-month-day">
+  //             <div className="li-year-month">{yearOnly} . {month}</div>
+  //             <div className="li-week-of-day">{dayName}</div>
+  //           </div>
+  //           <div className="daily-balance">
+  //             <div className="blue-total">$ 0</div>
+  //             <div className="red-total">$ 0</div>
+  //           </div>
+  //         </div>
+  //         <div className="each-transaction">
+  //           <div className="li-category-description-amount">
+  //             <div className="li-category">
+  //               {transaction.category}
+  //             </div>
+  //             <div className="li-description">
+  //               {transaction.description}
+  //             </div>
+  //             <div className="li-amount">
+  //               {amountStatus}
+  //             </div>
+  //           </div>
+  //         </div>
+  //       </li>
+  //     );
+
+  //   });
+
+  //   return (
+  //     <ul className="transaction-ul clicked">
+  //       {liTransaction}
+  //     </ul>
+  //   );
+  // }
+
+  render() {
+    // const getSumDeposit = (x, y) => {
+    //   if (this.props.transactionHistory.transactionType === 'Deposit') {
+    //     x = this.props.transactionHistory.amount;
+    //   } else {
+    //     y = this.props.transactionHistory.amount;
+    //   }
+    //   const add = x + y;
+
+    //   return add;
+    // };
+    // const sumDeposit = this.props.transaction.amount.reduce(getSumDeposit);
+
     const transactionLi = this.state.transactionHistory;
     const liTransaction = transactionLi.map(transaction => {
       const timeString = transaction.date;
@@ -77,24 +149,10 @@ class Daily extends React.Component {
         {liTransaction}
       </ul>
     );
-  }
 
-  render() {
-    // const getSumDeposit = (x, y) => {
-    //   if (this.props.transaction.transactionType === 'Deposit') {
-    //     x = this.props.transaction.amount;
-    //   } else {
-    //     y = this.props.transaction.amount;
-    //   }
-    //   const add = x + y;
-
-    //   return add;
-    // };
-    // const sumDeposit = this.props.transaction.amount.reduce(getSumDeposit);
-
-    return this.state.isLoading
-      ? <p>Loading...</p>
-      : <div>{this.renderTransactionLi()}</div>;
+    // return this.state.isLoading
+    //   ? <p>Loading...</p>
+    //   : <div>{this.renderTransactionLi()}</div>;
   }
 
 }

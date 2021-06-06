@@ -46,6 +46,7 @@ app.get('/api/transactions', (req, res, next) => {
   const sql = `
     select *
       from "transactions"
+      order by "date" desc
   `;
 
   db.query(sql)
