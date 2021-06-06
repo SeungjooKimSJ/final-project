@@ -4,8 +4,7 @@ class Daily extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      transactionHistory: [],
-      isLoading: true
+      transactionHistory: []
     };
   }
 
@@ -13,8 +12,7 @@ class Daily extends React.Component {
     fetch('/api/transactions')
       .then(res => res.json())
       .then(transactionHistory => this.setState({
-        transactionHistory: transactionHistory,
-        isLoading: false
+        transactionHistory: transactionHistory
       }))
       .catch(err => console.error('Fetch failed!', err));
   }
@@ -22,7 +20,7 @@ class Daily extends React.Component {
   render() {
     // const getDailyDeposit = (deposit, transactionHistory) => {
     //   // If transactionHistory's type is 'Deposit', and also date is same <<
-    //   if (transactionHistory.transactionType === 'Deposit' && transactionHistory.eachDay) {
+    //   if (transactionHistory.transactionType === 'Deposit' && transactionHistory.totalPerDay) {
     //     deposit += transactionHistory.amount;
     //   }
     //   return deposit;
@@ -86,10 +84,6 @@ class Daily extends React.Component {
         {liTransaction}
       </ul>
     );
-
-    // return this.state.isLoading
-    //   ? <p>Loading...</p>
-    //   : <div>{this.renderTransactionLi()}</div>;
   }
 
 }

@@ -5,8 +5,10 @@ class HomeMain extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      transactionHistory: []
+      transactionHistory: [],
+      clicked: false
     };
+    this.handleClicked = this.handleClicked.bind(this);
   }
 
   componentDidMount() {
@@ -16,6 +18,13 @@ class HomeMain extends React.Component {
         transactionHistory: transactionHistory
       }))
       .catch(err => console.error('Fetch failed!', err));
+  }
+
+  handleClicked() {
+    this.setState({
+      transactionHistory: [],
+      clicked: true
+    });
   }
 
   render() {
@@ -58,10 +67,10 @@ class HomeMain extends React.Component {
         </div>
         <div>
           <ul>
-            <li><a href="#daily" className="li-anchor daily">Daily</a></li>
-            <li><a href="#" className="li-anchor weekly">Weekly</a></li>
-            <li><a href="#" className="li-anchor monthly">Monthly</a></li>
-            <li><a href="#" className="li-anchor calendar">Calendar</a></li>
+            <li><a href="#daily" className={this.handleClicked ? 'li-anchor-active' : 'li-anchor'}>Daily</a></li>
+            <li><a href="#" className="li-anchor">Weekly</a></li>
+            <li><a href="#" className="li-anchor">Monthly</a></li>
+            <li><a href="#" className="li-anchor">Calendar</a></li>
           </ul>
         </div>
         <div className="current-balance">

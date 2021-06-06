@@ -58,10 +58,11 @@ li {
   color: #acacac;
 }
 
-/* .li-anchor.daily {
+.li-anchor-active {
   border-bottom: 2px solid #f55346;
   color: #000;
-} */
+  text-decoration: none;
+}
 
 .current-balance {
   display: flex;
@@ -95,7 +96,8 @@ li {
 .list-and-icon-container {
   margin-top: 0.5rem;
   border-top: 8px solid #acacac;
-  background-color: #f0f0f0;
+
+  /* background-color: #f0f0f0; */
 }
 
 .plus-icon-container {
@@ -118,7 +120,7 @@ footer {
   justify-content: space-around;
   background-color: #fafafa;
   border-top: 1px solid #acacac;
-  position: fixed;
+  position: sticky;
   bottom: 0;
   width: 100%;
 }
@@ -239,7 +241,7 @@ input,
   color: #000;
   text-align: center;
   padding: 5px 0;
-  border-style: none;
+  border: none;
   border-bottom: 1px solid #acacac;
 }
 
@@ -248,8 +250,10 @@ input:focus {
   border-bottom: 1px solid #fd6f63;
 }
 
+#date,
 #category {
   border: none;
+  background-color: #fff;
 }
 
 #date:hover,
@@ -344,16 +348,18 @@ input:focus {
 .transaction-ul {
   display: flex;
   flex-direction: column;
+  margin-top: 0;
 }
 
-.transaction-ul.clicked {
+/* .transaction-ul.clicked {
   background-color: #fff;
-}
+} */
 
 .transaction-li {
   display: flex;
   flex-direction: column;
   padding: 0.5rem 0;
+  background-color: #fff;
 }
 
 .transaction-li:nth-child(n+2) {
