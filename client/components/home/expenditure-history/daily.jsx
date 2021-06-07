@@ -18,15 +18,6 @@ class Daily extends React.Component {
   }
 
   render() {
-    // const getDailyDeposit = (deposit, transactionHistory) => {
-    //   // If transactionHistory's type is 'Deposit', and also date is same <<
-    //   if (transactionHistory.transactionType === 'Deposit' && transactionHistory.totalPerDay) {
-    //     deposit += transactionHistory.amount;
-    //   }
-    //   return deposit;
-    // };
-    // const dailyDeposit = this.state.transactionHistory.reduce(getDailyDeposit, 0);
-
     const transactionLi = this.state.transactionHistory;
     const liTransaction = transactionLi.map(transaction => {
       const timeString = transaction.date;
@@ -46,6 +37,13 @@ class Daily extends React.Component {
         amountStatus = <div className="red">${transaction.amount}</div>;
       }
 
+      let transactionMode;
+      if (transaction.transactionType === 'Deposit') {
+        transactionMode = <div className="mode">Deposit</div>;
+      } else {
+        transactionMode = <div className="mode">Withdraw</div>;
+      }
+
       return (
         <li key={transaction.transactionId} className="transaction-li">
           <div className="daily-li">
@@ -57,8 +55,7 @@ class Daily extends React.Component {
               <div className="li-week-of-day">{dayName}</div>
             </div>
             <div className="daily-balance">
-              <div className="blue-total">$ 0</div>
-              <div className="red-total">$ 0</div>
+              {transactionMode}
             </div>
           </div>
           <div className="each-transaction">

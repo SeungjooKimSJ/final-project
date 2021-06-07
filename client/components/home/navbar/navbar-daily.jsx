@@ -1,11 +1,13 @@
 import React from 'react';
+import Daily from '../expenditure-history/daily';
+import HomeFooter from '../home-footer';
+import HomeHeader from '../home-header';
 
-class HomeMain extends React.Component {
+class NavbarDaily extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      transactionHistory: [],
-      clicked: false
+      transactionHistory: []
     };
   }
 
@@ -46,6 +48,9 @@ class HomeMain extends React.Component {
     const balance = this.state.transactionHistory.reduce(getBalance, 0);
 
     return (
+      <>
+      <HomeHeader />
+
       <main>
         <div className="year-and-month">
           <div>
@@ -58,7 +63,7 @@ class HomeMain extends React.Component {
         </div>
         <div>
           <ul>
-            <li><a href="#daily" className="li-anchor">Daily</a></li>
+            <li><a href="#daily" className="li-anchor-active">Daily</a></li>
             <li><a href="#" className="li-anchor">Weekly</a></li>
             <li><a href="#" className="li-anchor">Monthly</a></li>
             <li><a href="#" className="li-anchor">Calendar</a></li>
@@ -79,6 +84,7 @@ class HomeMain extends React.Component {
           </div>
         </div>
         <div className="list-and-icon-container">
+          <Daily />
           <div className="plus-icon-container">
             <a href="#add-transaction">
               <i className="fas fa-plus-circle"></i>
@@ -86,8 +92,12 @@ class HomeMain extends React.Component {
           </div>
         </div>
       </main>
+
+      <HomeFooter />
+      </>
     );
   }
+
 }
 
-export default HomeMain;
+export default NavbarDaily;

@@ -96,8 +96,6 @@ li {
 .list-and-icon-container {
   margin-top: 0.5rem;
   border-top: 8px solid #acacac;
-
-  /* background-color: #f0f0f0; */
 }
 
 .plus-icon-container {
@@ -108,10 +106,8 @@ li {
 .fas.fa-plus-circle {
   color: #fd6f63;
   font-size: 40px;
-
-  /* padding: 0 2rem 1.5rem 0; */
-  position: absolute;
-  bottom: 5.5rem;
+  position: fixed;
+  bottom: 5rem;
   right: 2rem;
 }
 
@@ -120,7 +116,7 @@ footer {
   justify-content: space-around;
   background-color: #fafafa;
   border-top: 1px solid #acacac;
-  position: sticky;
+  position: fixed;
   bottom: 0;
   width: 100%;
 }
@@ -351,10 +347,6 @@ input:focus {
   margin-top: 0;
 }
 
-/* .transaction-ul.clicked {
-  background-color: #fff;
-} */
-
 .transaction-li {
   display: flex;
   flex-direction: column;
@@ -366,9 +358,14 @@ input:focus {
   border-top: 6px solid #acacac;
 }
 
+.transaction-li:last-child {
+  margin-bottom: 3.8rem;
+}
+
 .daily-li {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-left: 1rem;
   padding-bottom: 0.5rem;
 }
@@ -425,35 +422,6 @@ input:focus {
   position: inherit;
   right: 2rem;
 }
-
-
-/* .exUl {
-  margin: 0;
-  padding: 0;
-  font-size: 15px;
-  display: flex;
-  flex-direction: column;
-}
-
-.exLi {
-  display: flex;
-  justify-content: space-around;
-}
-
-.liDiv {
-  display: flex;
-  justify-content: space-around;
-}
-
-.liYearMonth,
-.blue {
-  margin-right: 3rem;
-}
-
-.money {
-  display: flex;
-  justify-content: space-around;
-} */
 
 .blue,
 .blue-total {
