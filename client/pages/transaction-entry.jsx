@@ -1,6 +1,5 @@
 import React from 'react';
 import FormControl from '../components/transaction-entry/form-control';
-import CategoryModal from '../components/transaction-entry/category-modal';
 
 class TransactionEntry extends React.Component {
   constructor(props) {
@@ -22,14 +21,6 @@ class TransactionEntry extends React.Component {
     this.setState({
       depositOn: false
     });
-  }
-
-  renderCategoryModal() {
-    return (
-      <div className="modal-container hidden">
-        <CategoryModal />
-      </div>
-    );
   }
 
   renderFooter() {
@@ -74,8 +65,6 @@ class TransactionEntry extends React.Component {
         </header>
 
         <FormControl depositOn={this.state.depositOn} />
-
-        {this.renderCategoryModal()}
 
         {this.renderFooter()}
       </>
