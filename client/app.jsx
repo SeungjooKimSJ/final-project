@@ -1,6 +1,8 @@
 import React from 'react';
+import NavbarDaily from './components/home/navbar/navbar-daily';
 import parseRoute from './lib/parse-route';
 import Home from './pages/home';
+import TransactionEntry from './pages/transaction-entry';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -22,16 +24,20 @@ export default class App extends React.Component {
 
   renderPage() {
     const { route } = this.state;
-
     if (route.path === '') {
       return <Home />;
+    }
+    if (route.path === 'add-transaction') {
+      return <TransactionEntry />;
+    }
+    if (route.path === 'daily') {
+      return <NavbarDaily />;
     }
   }
 
   render() {
     return (
       <>
-        <Home />
         {this.renderPage()}
       </>
     );

@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import TransactionEntry from './pages/transaction-entry';
+import App from './app';
 
 ReactDOM.render(
-  <TransactionEntry />,
+  <App />,
   document.querySelector('#root')
 );

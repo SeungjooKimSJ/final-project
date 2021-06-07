@@ -8,6 +8,10 @@ body {
   align-items: center;
 }
 
+.header.main {
+  border-bottom: 1px solid #acacac;
+}
+
 .fas.fa-caret-square-left {
   font-size: 20px;
   margin-top: 6px;
@@ -54,9 +58,10 @@ li {
   color: #acacac;
 }
 
-.li-anchor.daily {
+.li-anchor-active {
   border-bottom: 2px solid #f55346;
   color: #000;
+  text-decoration: none;
 }
 
 .current-balance {
@@ -88,11 +93,9 @@ li {
   align-items: center;
 }
 
-.empty-container {
+.list-and-icon-container {
   margin-top: 0.5rem;
   border-top: 8px solid #acacac;
-  background-color: #f0f0f0;
-  height: 62vh;
 }
 
 .plus-icon-container {
@@ -103,9 +106,9 @@ li {
 .fas.fa-plus-circle {
   color: #fd6f63;
   font-size: 40px;
-  padding: 0 2rem 1.5rem 0;
-  position: absolute;
-  bottom: 4rem;
+  position: fixed;
+  bottom: 5rem;
+  right: 2rem;
 }
 
 footer {
@@ -234,7 +237,7 @@ input,
   color: #000;
   text-align: center;
   padding: 5px 0;
-  border-style: none;
+  border: none;
   border-bottom: 1px solid #acacac;
 }
 
@@ -243,8 +246,10 @@ input:focus {
   border-bottom: 1px solid #fd6f63;
 }
 
+#date,
 #category {
   border: none;
+  background-color: #fff;
 }
 
 #date:hover,
@@ -334,6 +339,103 @@ input:focus {
 
 .each-btn:focus {
   outline: none;
+}
+
+.transaction-ul {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0;
+}
+
+.transaction-li {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 0;
+  background-color: #fff;
+}
+
+.transaction-li:nth-child(n+2) {
+  border-top: 6px solid #acacac;
+}
+
+.transaction-li:last-child {
+  margin-bottom: 3.8rem;
+}
+
+.daily-li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 1rem;
+  padding-bottom: 0.5rem;
+}
+
+.li-date {
+  font-size: 18px;
+  font-weight: 1000;
+}
+
+.li-year-month-day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  right: 5rem;
+}
+
+.li-week-of-day {
+  font-size: 12px;
+}
+
+.daily-balance {
+  display: flex;
+  position: relative;
+  right: 6rem;
+}
+
+.each-transaction {
+  border-top: 1px solid #acacac;
+  padding-top: 0.5rem;
+}
+
+.li-category-description-amount {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  right: 1rem;
+}
+
+.li-category {
+  color: #acacac;
+  font-size: 0.8rem;
+}
+
+.li-description {
+  position: inherit;
+  right: 2rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.li-amount {
+  position: inherit;
+  right: 2rem;
+}
+
+.blue,
+.blue-total {
+  color: #78b7f6;
+}
+
+.red,
+.red-total {
+  color: #f55346;
+}
+
+.red-total {
+  position: relative;
+  left: 4rem;
 }
 
 .hidden {

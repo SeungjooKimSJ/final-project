@@ -44,8 +44,11 @@ app.get('/api/users/:userId', (req, res, next) => {
 
 app.get('/api/transactions', (req, res, next) => {
   const sql = `
-    select *
+    select *,
+      sum("amount") as "totalPerDay"
       from "transactions"
+      group by "date", "transactionId"
+      order by "date" desc
   `;
 
   db.query(sql)

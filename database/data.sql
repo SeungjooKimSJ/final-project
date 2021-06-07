@@ -9,11 +9,11 @@ insert into "transactions" (
   "category",
   "description"
 )
-values (
-  'Expenses',
-  'Withdraw',
-  '2021-05-26',
-  50,
-  'Grocery',
-  'Target'
-);
+-- values (
+--   'Income',
+--   'Deposit',
+--   '2021-06-01',
+--   1000,
+--   'Check',
+--   'Bank'
+-- );
