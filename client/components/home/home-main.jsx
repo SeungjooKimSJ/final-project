@@ -59,7 +59,7 @@ class HomeMain extends React.Component {
         <div>
           <ul>
             <li><a href="#daily" className="li-anchor">Daily</a></li>
-            <li><a href="#" className="li-anchor">Weekly</a></li>
+            <li><a href="#weekly" className="li-anchor">Weekly</a></li>
             <li><a href="#" className="li-anchor">Monthly</a></li>
             <li><a href="#" className="li-anchor">Calendar</a></li>
           </ul>

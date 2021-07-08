@@ -1,5 +1,6 @@
 import React from 'react';
 import NavbarDaily from './components/home/navbar/navbar-daily';
+import NavbarWeekly from './components/home/navbar/navbar-weekly';
 import parseRoute from './lib/parse-route';
 import Home from './pages/home';
 import TransactionEntry from './pages/transaction-entry';
@@ -32,6 +33,9 @@ export default class App extends React.Component {
     }
     if (route.path === 'daily') {
       return <NavbarDaily />;
+    }
+    if (route.path === 'weekly') {
+      return <NavbarWeekly />;
     }
   }
 
