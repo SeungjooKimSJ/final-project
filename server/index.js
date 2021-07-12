@@ -58,6 +58,32 @@ app.get('/api/transactions', (req, res, next) => {
     .catch(err => next(err));
 });
 
+app.get('/api/daily', (req, res, next) => {
+  const transactionsSql = `
+  where "date" = now()::date
+  `;
+
+  const totalsSql = `
+  sum("amount") as "totalPerDay"
+  from "transactions"
+  group by "date", "transactionId"
+  order by "date" desc
+  `;
+
+  Promise.all([
+    db.query(transactionsSql),
+    db.query(totalsSql)
+  ])
+    .then(bothResults => {
+      const transactionsResults = bothResults[0];
+      const totalResults = bothResults[1];
+      // eslint-disable-next-line no-console
+      console.log(transactionsResults);
+      // eslint-disable-next-line no-console
+      console.log(totalResults);
+    });
+});
+
 app.post('/api/transactions', (req, res, next) => {
   const status = req.body.status;
   const transactionType = req.body.transactionType;
